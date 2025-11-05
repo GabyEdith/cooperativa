@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.container1{
+    display: grid;
+    grid-template-columns: 40% auto;
+}
+.container2{
+    background-color: aqua;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 50%;
+    gap: 10px;
+}
+
+.cajaart1{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+}
+.container3{
+    background-color: blueviolet;
+    padding: 10px;
+    
+}
