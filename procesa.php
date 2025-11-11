@@ -9,9 +9,9 @@
     $filas = mysqli_num_rows($resultado);
     $filas = mysqli_fetch_assoc($resultado);
     if ($filas > 0) {
-        $_SESSION['apellido'] = $filas ['usu_apell'];
-        $_SESSION['nombre'] = $filas ['usu_nom'];
-        $_SESSION['rol'] = $filas ['usurol_id'];
+        $_SESSION['apellido'] = $filas ['usu_apellido'];
+        $_SESSION['nombre'] = $filas ['usu_nombre'];
+        $_SESSION['rol'] = $filas ['usu_rol_id'];
         header('location:inicio.php');
     } else {
         header('location:index.php');

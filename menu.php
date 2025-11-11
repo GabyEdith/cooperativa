@@ -9,7 +9,7 @@
       <a href="venta.php">Ventas</a>
       <a href="molienda.php">Molienda</a>
       <?php    
-      if ($rol== "2") {
+      if ($rol== "1") {
             ?>
             <a href="">Balances</a>
             <a href="">Administracion</a>
