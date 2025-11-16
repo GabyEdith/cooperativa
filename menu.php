@@ -3,7 +3,7 @@
       $rol = $_SESSION['rol'];
       ?>
       <a href="inicio.php">Inicio</a>
-      <a href="clientes.php">Clientes</a>
+      <a href="vista/clientes.php">Clientes</a>
 
       <a href="productos.php">Productos</a>
       <a href="venta.php">Ventas</a>
@@ -19,6 +19,6 @@
                 
      ?>
                 
-    <a href="index.php">Cerrar sesion</a>
+    <a href="salir.php">Cerrar sesion</a>
 
   </nav> 

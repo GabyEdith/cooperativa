@@ -1,6 +1,4 @@
-<?php
-   $usuario ='administrador';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

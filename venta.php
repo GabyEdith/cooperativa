@@ -1,15 +1,18 @@
 <?php
-   $usuario ='administrador';
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/icons.js"></script>
+        <script src="js/functions.js"></script>
          <title>Mi Negocio</title>
         <link rel="stylesheet" href="css/estMenu.css">
         <link rel="stylesheet" href="css/estCuerpoVenta.css">
         <link rel="stylesheet" href="css/estFooter.css">
+
     </head>
     <body>
         <section id= "contenedor">

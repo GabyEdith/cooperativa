@@ -1,6 +1,9 @@
 <?php
 session_start();
-include('conexion.php');
+if(empty($_SESSION['active'])){
+    header('location: index.php');
+}
+include("conexion.php");
 if(isset($_SESSION['nombre'])){
 $nombre = $_SESSION['nombre'] ;
 $apellido = $_SESSION['apellido'] ;

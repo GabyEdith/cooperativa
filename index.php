@@ -20,6 +20,7 @@
             <br>
             <input type="checkbox" name="recordar" id="recordar" value="recordar">Recordar contraseña
             <br>
+            
             <input type="submit" value="Acceder">
 
             </div>
