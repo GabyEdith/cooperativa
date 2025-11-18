@@ -2,7 +2,7 @@
 include "conexion.php";
 session_start();
 
-if(!empty($_POST))
+if(!empty($_POST))//empty verifica si esta vacio
 {
     //buscar cliente
     if($_POST['action'] == 'searchCliente')
@@ -41,7 +41,7 @@ if(!empty($_POST))
         mysqli_close($conexion);
         echo $msg;
     }
-
+// info producto
     if($_POST['action'] == 'infoProducto')
     {
         $producto_id = $_POST['producto'];

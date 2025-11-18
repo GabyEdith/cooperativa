@@ -1,8 +1,8 @@
 <?php 
 include('../conexion.php');
 
-$columns =["usu_id", "usu_rol_id","usu_apellido", "usu_nombre", "usu_dni", "usu_telefono",  "usu_login", "usu_password", "fecha_actualizacion"];
-$table="usuarios";
+$columns =["cli_id", "cli_identificacion","cli_nombre", "cli_apellido", "cli_direccion", "cli_email",  "cli_telefono", "fecha_actualizacion"];
+$table="clientes";
 $campo = isset($_POST['campo']) ? $conexion->real_escape_string($_POST['campo']) : null;
 
 $where = "";
@@ -25,22 +25,22 @@ $num_rows = $resultado->num_rows;// esto nos da la cantidad de filas que tiene l
 $html="";
 
 if($num_rows > 0){
-    
+
     while($row = $resultado->fetch_assoc()){
         
         $html .= "<tr>";
-        $html .= "<td>".$row['usu_id']."</td>";
-        $html .= "<td>".$row['usu_rol_id']."</td>";
-        $html .= "<td>".$row['usu_apellido']."</td>";
-        $html .= "<td>".$row['usu_nombre']."</td>";
-        $html .= "<td>".$row['usu_dni']."</td>";
-        $html .= "<td>".$row['usu_telefono']."</td>";
-        $html .= "<td>".$row['usu_login']."</td>";
-        $html .= "<td>".$row['usu_password']."</td>";
+        $html .= "<td>".$row['cli_id']."</td>";
+        $html .= "<td>".$row['cli_identificacion']."</td>";
+        $html .= "<td>".$row['cli_apellido']."</td>";
+        $html .= "<td>".$row['cli_nombre']."</td>";
+        $html .= "<td>".$row['cli_direccion']."</td>";
+        $html .= "<td>".$row['cli_email']."</td>";
+        $html .= "<td>".$row['cli_telefono']."</td>";    
         $html .= "<td>".$row['fecha_actualizacion']."</td>";
-        //$html .= "<td><button class='btn btn-danger' onclick='eliminarUsuario(".$row['usu_id'].")'>Eliminar</button></td>";
-        //$html .= "<td><button class='btn btn-info' onclick='editarUsuario(".$row['usu_id'].")'>Editar</button></td>";
+        $html .= " <td><button class='btn btn-danger btn-eliminar p-0' data-id='".$row['cli_id']."'><i class='bi bi-trash3 fs-5 p-3'></i></button></td>";
+        $html .= "<td><button class='btn btn-success btn-editar p-0'  data-id='".$row['cli_id']."'><i class='bi bi-pencil-square fs-5 p-3'></i></button></td>";
         $html .= "</tr>";
+    
     }
 }else {
     $html .= "<tr>";
@@ -49,4 +49,5 @@ if($num_rows > 0){
 }
 
 echo json_encode($html, JSON_UNESCAPED_UNICODE);
+
 ?>

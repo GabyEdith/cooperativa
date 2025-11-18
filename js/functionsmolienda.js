@@ -75,64 +75,64 @@ $(document).ready(function(){
         
     });
 
-    // //buscar producto 
-    // $('#txt_cod_producto').keyup(function(e){
-    //     e.preventDefault();
-    //     var producto = $(this).val();//this captura el valor del input
-    //     var action = 'infoProducto';//action es el nombre del metodo en ajax.php
-    //     if(producto != ''){
-    //          $.ajax({
-    //             url: 'ajax.php',
-    //             type: "POST",
-    //             async: true,
-    //             data:{action:action,producto:producto},
-    //             success: function(response){
+    //buscar producto 
+    $('#txt_cod_producto').keyup(function(e){
+        e.preventDefault();
+        var producto = $(this).val();//this captura el valor del input
+        var action = 'infoProducto';//action es el nombre del metodo en ajax.php
+        if(producto != ''){
+             $.ajax({
+                url: 'ajaxmolienda.php',
+                type: "POST",
+                async: true,
+                data:{action:action,producto:producto},
+                success: function(response){
                   
-    //                 if($.trim(response) != 'false'){
-    //                     var info = JSON.parse(response);
-    //                     $('#txt_descripcion').html(info.pro_nombre); 
-    //                     $('#txt_existencia').html(info.pro_stock);
-    //                     $('#txt_cant_producto').val('1');
-    //                     $('#txt_precio').html(info.pro_precio);
-    //                     $('#txt_precio_total').html(info.pro_precio);
-    //                     $('#txt_cant_producto').removeAttr('disabled');
-    //                     //activar el campo cantidad
-    //                     $('#add_product_venta').slideDown();
-    //                 }else{
-    //                     $('#txt_descripcion').html('-');
-    //                     $('#txt_existencia').html('-');
-    //                     $('#txt_cant_producto').val('0');
-    //                     $('#txt_precio').html('0.00');
-    //                     $('#txt_precio_total').html('0.00');
-    //                     $('#txt_cant_producto').attr('disabled','disabled');
-    //                     $('#add_product_venta').slideUp();
+                    if($.trim(response) != 'false'){
+                        var info = JSON.parse(response);
+                        $('#txt_descripcion').html(info.pro_nombre); 
+                        $('#txt_existencia').html(info.pro_stock);
+                        $('#txt_cant_producto').val('1');
+                        $('#txt_precio').html(info.pro_precio);
+                        $('#txt_precio_total').html(info.pro_precio);
+                        $('#txt_cant_producto').removeAttr('disabled');
+                        //activar el campo cantidad
+                        $('#add_product_venta').slideDown();
+                    }else{
+                        $('#txt_descripcion').html('-');
+                        $('#txt_existencia').html('-');
+                        $('#txt_cant_producto').val('0');
+                        $('#txt_precio').html('0.00');
+                        $('#txt_precio_total').html('0.00');
+                        $('#txt_cant_producto').attr('disabled','disabled');
+                        $('#add_product_venta').slideUp();
 
                         
-    //                 }
-    //             }
-    //     });
-    //     }
+                    }
+                }
+        });
+        }
        
-    // ;   
-    // });
+    ;   
+    });
 
     //validar la cantidad del producto antes de agregar
-    // $('#txt_cant_producto').keyup(function(e){
-    //     e.preventDefault();
-    //     var precio_total = $(this).val() * $('#txt_precio').html();
-    //     var existencia = parseInt($('#txt_existencia').html());
+    $('#txt_cant_producto').keyup(function(e){
+        e.preventDefault();
+        var precio_total = $(this).val() * $('#txt_precio').html();
+        var existencia = parseInt($('#txt_existencia').html());
 
-    //     if(($(this).val() > existencia)){
-    //         $('#txt_cant_producto').val(existencia);
-    //         precio_total = existencia * parseFloat($('#txt_precio').html());
-    //     }
-    //     $('#txt_precio_total').html(precio_total);
+        if(($(this).val() > existencia)){
+            $('#txt_cant_producto').val(existencia);
+            precio_total = existencia * parseFloat($('#txt_precio').html());
+        }
+        $('#txt_precio_total').html(precio_total);
          
-    //     if(($(this).val() < 1) || (isNaN($(this).val()))){ //isNaN = no es un numero
-    //         $('#add_product_venta').slideUp();
-    //     }else{
-    //         $('#add_product_venta').slideDown();
-    //     }
+        if(($(this).val() < 1) || (isNaN($(this).val()))){ //isNaN = no es un numero
+            $('#add_product_venta').slideUp();
+        }else{
+            $('#add_product_venta').slideDown();
+        }
     
-    // });      
+    });      
 });

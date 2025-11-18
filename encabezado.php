@@ -16,6 +16,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 }
 ?>
 <header>
+
     <div class="caja1encabezado">
         <a href="index.php"><img src="img/logo.png" alt="logo" width="110" height="110" class="imgEncabezado"></a>
     </div>

@@ -1,15 +1,14 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 footer {
   background-color:  rgb(173, 219, 112); 
   text-align: center;
   margin-top: 20px;
+  
 }
 
 footer h4 {
   color: rgb(8, 8, 8);
   padding: 10px;
+  font-family: 'Gill Sans';
+  font:4px;
 }
