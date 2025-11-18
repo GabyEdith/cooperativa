@@ -105,9 +105,7 @@ $(document).ready(function(){
                         $('#txt_precio').html('0.00');
                         $('#txt_precio_total').html('0.00');
                         $('#txt_cant_producto').attr('disabled','disabled');
-                        $('#add_product_venta').slideUp();
-
-                        
+                        $('#add_product_venta').slideUp();                        
                     }
                 }
         });
